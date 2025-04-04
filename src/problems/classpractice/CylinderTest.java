@@ -1,8 +1,26 @@
 package problems.classpractice;
 
 class Cylinder{
-    public double radius;
-    public double height;
+    private double radius;
+    private double height;
+
+    public Cylinder(){
+        radius = 1.0;
+        height = 1.0;
+    }
+
+    public void setDimensions(double radius, double height){
+        this.radius = radius;
+        this.height = height;
+    }
+
+    public void setRadius(double radius){
+        this.radius = radius;
+    }
+
+    public void setHeight(double height){
+        this.height = height;
+    }
 
     public double lidArea(){
         return Math.PI * radius * radius;
@@ -20,8 +38,7 @@ class Cylinder{
 public class CylinderTest {
     public static void main(String[] args) {
         Cylinder c = new Cylinder();
-        c.radius = 5.0;
-        c.height = 10.0;
+        c.setDimensions(3.0, 4.0);
         System.out.println("The area of the cylinder is " + c.surfaceArea());
         System.out.println("The volume of the cylinder is " + c.volume());
         System.out.println("The lid area of the cylinder is " + c.lidArea());
